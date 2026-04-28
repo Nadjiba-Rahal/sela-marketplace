@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sela-green:   #0D9E6E;
+  --sela-emerald: #059669;
+  --sela-dark:    #065F46;
+  --sela-light:   #D1FAE5;
+  --sela-gray:    #6B7280;
+  --sela-charcoal:#1F2937;
+  --sela-cream:   #FAFAF7;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--sela-cream);
+  color: var(--sela-charcoal);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: var(--sela-green); border-radius: 3px; }
+
+/* ── Utility classes ───────────────────────────────────────── */
+.sela-card {
+  @apply bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-200;
+}
+.sela-card:hover {
+  @apply shadow-md -translate-y-0.5;
+}
+
+.btn-primary {
+  @apply bg-sela-green text-white font-semibold px-5 py-2.5 rounded-xl 
+         hover:bg-sela-emerald active:scale-95 transition-all duration-150 
+         disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-outline {
+  @apply border-2 border-sela-green text-sela-green font-semibold px-5 py-2.5 rounded-xl 
+         hover:bg-sela-light active:scale-95 transition-all duration-150;
+}
+
+.btn-whatsapp {
+  @apply bg-[#25D366] text-white font-semibold px-5 py-2.5 rounded-xl 
+         hover:bg-[#1ebe5d] active:scale-95 transition-all duration-150 
+         flex items-center gap-2;
+}
+
+.input-field {
+  @apply w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm 
+         focus:outline-none focus:ring-2 focus:ring-sela-green focus:border-transparent
+         bg-white transition-all duration-150;
+}
+
+/* ── Staggered animation helpers ──────────────────────────── */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.10s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.20s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.30s; }
