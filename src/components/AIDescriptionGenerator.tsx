@@ -58,7 +58,8 @@ export default function AIDescriptionGenerator({ onGenerated }: Props) {
       <textarea
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder='e.g. "عندي تيشيرتات جديدة بكل الألوان بسعر مناسب" or "J\'ai des écouteurs Bluetooth neufs…"'
+        // Using curly braces and backticks handles the quotes and special characters safely
+        placeholder={`e.g. "عندي تيشيرتات جديدة بكل الألوان بسعر مناسب" or "J'ai des écouteurs Bluetooth neufs…"`}
         rows={3}
         className="input-field resize-none text-sm mb-3"
       />
